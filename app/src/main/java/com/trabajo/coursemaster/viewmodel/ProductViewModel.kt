@@ -2,14 +2,14 @@ package com.trabajo.coursemaster.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.trabajo.coursemaster.data.firebase.AppContainer
 import com.trabajo.coursemaster.data.model.Product
-import com.trabajo.coursemaster.data.repository.ProductRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class ProductViewModel : ViewModel() {
-    private val repository = ProductRepository()
+    private val repository = AppContainer.productRepository
 
     private val _products = MutableStateFlow<List<Product>>(emptyList())
     val products: StateFlow<List<Product>> = _products

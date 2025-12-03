@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
 
-class ProductRepository {
+class ProductRepository(firestore1: FirebaseFirestore) {
     private val firestore = FirebaseFirestore.getInstance()
     private val productsCollection = firestore.collection("products")
 
